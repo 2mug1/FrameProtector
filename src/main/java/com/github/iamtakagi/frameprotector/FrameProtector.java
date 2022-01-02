@@ -17,11 +17,11 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class FrameProtector extends JavaPlugin implements Listener {
-	
-	@Override
-	public void onEnable() {
-		this.getServer().getPluginManager().registerEvents(this, this);
-	}
+
+    @Override
+    public void onEnable() {
+        this.getServer().getPluginManager().registerEvents(this, this);
+    }
 
     @EventHandler
     public void onTrigger(EntityDamageByEntityEvent event) {
@@ -49,7 +49,8 @@ public class FrameProtector extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerInteractEntity(PlayerInteractEntityEvent event) {
-        if (!event.isCancelled() && event.getRightClicked() instanceof ItemFrame && !((ItemFrame) event.getRightClicked()).getItem().getType().equals(Material.AIR)) {
+        if (!event.isCancelled() && event.getRightClicked() instanceof ItemFrame
+                && !((ItemFrame) event.getRightClicked()).getItem().getType().equals(Material.AIR)) {
             Player player = event.getPlayer();
             if (player.getGameMode() != GameMode.CREATIVE) {
                 event.setCancelled(true);
@@ -62,7 +63,8 @@ public class FrameProtector extends JavaPlugin implements Listener {
         Player player = event.getPlayer();
         if (player.getGameMode() != GameMode.CREATIVE) {
             Block block = event.getClickedBlock();
-            if (block == null) return;
+            if (block == null)
+                return;
             if (block.getType() == Material.ITEM_FRAME) {
                 event.setCancelled(true);
             }
