@@ -1,0 +1,5 @@
+name: FrameProtector
+main: com.github.iamtakagi.frameprotector.FrameProtector
+version: 1.0
+author: iamtakagi
+api-version: 1.17
