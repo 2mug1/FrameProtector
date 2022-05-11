@@ -7,4 +7,4 @@
 `mvn clean package`
 
 ## LICENSE
-MIT　Licence.
+MIT Licence.
